@@ -1,12 +1,12 @@
 # 📌 AI Voice Receptionist  
 
-## 👩‍💻 Author  
+## Author  
 Shraddha Bankar  
 
-## 🏫 Affiliation  
+## Affiliation  
 Computer Science Engineering (Data Science)  
 
-## 📅 Date  
+## Date  
 March 2026  
 
 ---
