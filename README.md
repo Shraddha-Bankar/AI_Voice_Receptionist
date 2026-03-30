@@ -34,7 +34,7 @@ Most systems support only voice or chat, but this project combines both along wi
 
 ---
 
-## ⚙️ Methodology  
+## Methodology  
 - Take input through voice or chat  
 - Convert voice to text  
 - Understand user request using NLP  
