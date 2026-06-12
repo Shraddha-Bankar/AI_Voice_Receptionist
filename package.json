@@ -1,9 +1,7 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "name": "vaaniai",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx serve ."
+  }
 }
