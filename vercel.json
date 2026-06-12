@@ -1,9 +1,11 @@
 {
-  "cleanUrls": true,
+  "version": 2,
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "framework": null,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/src/:path*", "destination": "/src/:path*" },
+    { "source": "/public/:path*", "destination": "/public/:path*" },
+    { "source": "/:path*", "destination": "/index.html" }
   ]
 }
