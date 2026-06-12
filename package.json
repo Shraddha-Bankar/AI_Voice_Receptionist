@@ -1,9 +1,7 @@
 {
   "name": "vaaniai",
   "version": "1.0.0",
-  "description": "AI Voice Receptionist - City General Hospital",
   "scripts": {
-    "start": "python3 -m http.server 3000",
-    "dev": "npx serve . -p 3000"
+    "dev": "npx serve ."
   }
 }
