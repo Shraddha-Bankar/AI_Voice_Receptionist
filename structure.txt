@@ -1,0 +1,30 @@
+vaaniai/
+├── index.html              ← SPA entry point (all CSS + routing)
+├── vercel.json             ← Vercel deployment config
+├── src/
+│   ├── components/
+│   │   ├── voiceOrb.js     ← Voice agent UI + conversation loop
+│   │   ├── sidebar.js      ← Navigation
+│   │   ├── topbar.js       ← Header
+│   │   ├── charts.js       ← SVG charts
+│   │   └── modals.js       ← Popup dialogs
+│   ├── pages/
+│   │   ├── dashboard.js    ← Main dashboard
+│   │   ├── calls.js        ← Call logs
+│   │   ├── appointments.js ← Appointment manager
+│   │   ├── crm.js          ← Contacts / CRM
+│   │   ├── analytics.js    ← Analytics charts
+│   │   ├── transcripts.js  ← Call transcripts
+│   │   ├── notifications.js← Alerts
+│   │   ├── voiceConfig.js  ← Agent configuration
+│   │   └── settings.js     ← App settings
+│   ├── services/
+│   │   ├── openrouter.js   ← LLM API (OpenRouter)
+│   │   ├── speech.js       ← STT + TTS (Web Speech API)
+│   │   ├── intentDetector.js
+│   │   └── languageDetector.js
+│   ├── store/appState.js   ← Global state
+│   └── utils/
+│       ├── constants.js    ← Mock data + config
+│       └── formatters.js   ← Date/time helpers
+└── public/favicon.svg
