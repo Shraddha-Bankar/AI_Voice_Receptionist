@@ -1,0 +1,220 @@
+========================================
+🎙️ AI VOICE RECEPTIONIST
+PROJECT NOTES (COMPLETE GUIDE)
+========================================
+
+PROJECT LINK:
+https://ai-voice-receptionist-ebon.vercel.app/
+
+========================================
+1. PROJECT DESCRIPTION
+========================================
+
+AI Voice Receptionist is a browser-based AI-powered virtual assistant designed for hospital environments.
+
+It allows users to interact using natural voice instead of typing.
+
+Supported languages:
+- English
+- Hindi
+- Marathi
+
+The system uses:
+Speech Recognition + Artificial Intelligence (LLM) + Text-to-Speech
+
+to provide real-time voice conversation with users.
+
+========================================
+2. REQUIREMENTS
+========================================
+
+HARD REQUIREMENTS:
+- Google Chrome (Recommended browser)
+- Stable Internet Connection
+- Microphone access enabled
+
+SOFTWARE REQUIREMENTS:
+- Any modern web browser
+- JavaScript enabled
+
+TECH STACK:
+- HTML
+- CSS
+- JavaScript (ES6)
+- OpenRouter API (AI Model)
+- Web Speech API (Speech to Text)
+- Speech Synthesis API (Text to Speech)
+- Vercel (Deployment)
+
+OPTIONAL TOOLS (FOR DEVELOPMENT):
+- Visual Studio Code
+- Git
+- GitHub
+
+========================================
+3. HOW TO RUN PROJECT
+========================================
+
+👉 STEP 1: OPEN THE WEBSITE
+
+Open the application using this link:
+
+https://ai-voice-receptionist-ebon.vercel.app/
+
+You will be redirected to the homepage.
+
+----------------------------------------
+
+👉 STEP 2: EXPLORE THE HOMEPAGE
+
+The homepage contains:
+
+- Project Title Section
+- Start Voice Assistant Button
+- Feature Overview
+- Instructions Section
+
+Read the page to understand system functionality.
+
+----------------------------------------
+
+👉 STEP 3: START VOICE ASSISTANT
+
+Click the "Start Voice Assistant" button.
+
+The system will:
+
+- Activate microphone
+- Initialize AI system
+- Start listening for user input
+
+----------------------------------------
+
+👉 STEP 4: ALLOW MICROPHONE ACCESS
+
+When browser prompt appears:
+
+Click "Allow Microphone Access"
+
+(This is mandatory for voice interaction)
+
+----------------------------------------
+
+👉 STEP 5: SPEAK YOUR QUERY
+
+Speak clearly into the microphone.
+
+Supported languages:
+- English
+- Hindi
+- Marathi
+
+Example:
+- "Book an appointment with doctor"
+- "Hospital timing kya hai?"
+- "मुझे डॉक्टर से मिलना है"
+
+----------------------------------------
+
+👉 STEP 6: AI PROCESSING
+
+After speaking:
+
+System performs:
+
+- Speech to Text conversion
+- Language detection
+- Intent understanding using AI
+- Response generation using LLM
+
+----------------------------------------
+
+👉 STEP 7: VOICE RESPONSE
+
+System will:
+
+- Convert AI response into speech
+- Play audio automatically
+- Continue conversation flow
+
+========================================
+4. HOW IT WORKS (TECH FLOW)
+========================================
+
+User Speech Input
+        ↓
+Speech Recognition (Web Speech API)
+        ↓
+Language Detection (EN/HI/MR)
+        ↓
+OpenRouter AI Processing
+        ↓
+Response Generation (LLM)
+        ↓
+Text-to-Speech Output
+        ↓
+Voice Response to User
+
+========================================
+5. FEATURES
+========================================
+
+- AI Voice-Based Receptionist
+- Hospital Automation System
+- Multilingual Support (English, Hindi, Marathi)
+- Real-Time Speech Recognition
+- AI Smart Response Generation
+- Text-to-Speech Output
+- Browser-Based System (No Installation Required)
+- Instant Voice Interaction
+
+========================================
+6. COMMON ISSUES & FIXES
+========================================
+
+ISSUE: Microphone not working
+FIX: Allow microphone permission in browser settings
+
+ISSUE: No voice output
+FIX: Check speaker volume and browser support
+
+ISSUE: AI not responding
+FIX: Check internet connection and refresh page
+
+========================================
+7. SUPPORTED BROWSERS
+========================================
+
+- Google Chrome (Best Recommended)
+- Microsoft Edge
+- Brave Browser
+- Firefox (Limited support)
+
+========================================
+8. TIPS FOR BEST RESULTS
+========================================
+
+- Speak clearly and slowly
+- Use Chrome browser
+- Avoid background noise
+- Always allow microphone access
+- Use stable internet connection
+
+========================================
+9. AUTHOR
+========================================
+
+Shraddha Bankar
+B.Tech CSE (Data Science)
+Nagpur, Maharashtra, India
+
+========================================
+10. PROJECT LINK
+========================================
+
+Live Project:
+https://ai-voice-receptionist-ebon.vercel.app/
+
+========================================
+END OF FILE
+========================================
