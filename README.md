@@ -1,218 +1,257 @@
-<<<<<<< HEAD
-# Vaaniai — AI Voice Receptionist
+<div align="center">
 
-AI-powered voice receptionist for City General Hospital, Nagpur.  
-Supports **English, Hindi, and Marathi** with real two-way voice conversation.
+# 🎙️ VaaniAI: AI-Powered Hospital Voice Receptionist
+
+### Conversational AI for Multilingual Healthcare Access
+
+🌐 **Live Deployment**
+
+🚀 **https://ai-voice-receptionist-ebon.vercel.app/**
 
 ---
 
-## 🚀 Deploy to Vercel (5 minutes)
+## 👩‍💻 Author
 
-### Option A — Vercel CLI
-```bash
-npm install -g vercel
-cd vaaniai
-vercel
-# Follow prompts. No build step needed — it's a static site.
+**Shraddha Bankar**  
+B.Tech – Computer Science Engineering (Data Science)
+
+RTMNU, Maharashtra, India
+
+📅 **Date of Publication:** June 2026
+
+</div>
+
+---
+
+# Abstract
+
+Healthcare communication is one of the most important aspects of patient care. However, many hospitals face challenges such as long waiting queues, overloaded reception desks, and communication barriers between patients and staff. These challenges often affect patient experience and increase administrative workload.
+
+VaaniAI is an AI-powered hospital voice receptionist designed to provide natural and intelligent communication between patients and healthcare providers. The system allows users to interact through voice in English, Hindi, and Marathi. It automatically recognizes speech, detects the user's language, understands the request, and responds with meaningful information using Artificial Intelligence.
+
+The project combines Speech Recognition, Natural Language Processing (NLP), Large Language Models (LLMs), and Text-to-Speech technologies to create a seamless voice-based experience. The primary objective is to improve accessibility, reduce receptionist workload, and provide 24/7 assistance for hospital-related queries and appointment bookings.
+
+**Keywords:** Artificial Intelligence, Voice Assistant, Healthcare Automation, Natural Language Processing, Speech Recognition, OpenRouter API, Hospital Management.
+
+---
+
+# 1. Introduction
+
+Hospitals receive thousands of patient inquiries related to appointments, doctor availability, consultation fees, department information, and emergency services. Managing these requests manually can be time-consuming and stressful for reception staff.
+
+With the advancement of Artificial Intelligence and Natural Language Processing, conversational systems can now automate many routine communication tasks. VaaniAI acts as a virtual hospital receptionist capable of understanding spoken language and responding naturally to patients.
+
+The system supports English, Hindi, and Marathi, making healthcare information more accessible to users from different linguistic backgrounds. Since the application runs directly in a web browser, it requires no installation and can be accessed from anywhere.
+
+---
+
+# 2. Literature Review
+
+Recent research in healthcare technology highlights the growing importance of conversational AI systems and voice assistants.
+
+Voice-based interfaces improve accessibility for elderly users and individuals who may struggle with traditional text-based systems. Studies have shown that healthcare chatbots can reduce administrative workload, improve response times, and enhance patient engagement.
+
+Speech Recognition and Text-to-Speech technologies have become increasingly accurate, enabling natural communication between humans and machines. Furthermore, Large Language Models (LLMs) have significantly improved contextual understanding and response generation capabilities.
+
+While several commercial healthcare assistants exist, many require expensive infrastructure and complex deployment. VaaniAI focuses on providing a lightweight, cost-effective, and multilingual solution suitable for hospitals and clinics.
+
+---
+
+# 3. Methodology
+
+The system follows a five-stage conversational workflow.
+
+### Step 1: Voice Input
+
+The patient speaks into the microphone using a supported browser.
+
+### Step 2: Speech Recognition
+
+The Web Speech API converts spoken audio into text.
+
+### Step 3: Language Detection
+
+The system identifies whether the user is speaking English, Hindi, or Marathi.
+
+### Step 4: AI Processing
+
+The recognized text is sent to OpenRouter's Large Language Model, where the user's intent is analyzed and an appropriate response is generated.
+
+### Step 5: Voice Response
+
+The generated response is converted into speech using Text-to-Speech technology and played back to the user.
+
+### Workflow Diagram
+
+```text
+Patient Voice Input
+        │
+        ▼
+Speech Recognition
+        │
+        ▼
+Language Detection
+        │
+        ▼
+Intent Analysis
+        │
+        ▼
+OpenRouter LLM
+        │
+        ▼
+Response Generation
+        │
+        ▼
+Text-to-Speech
+        │
+        ▼
+Voice Output
 ```
 
-### Option B — Vercel Dashboard (drag & drop)
-1. Go to https://vercel.com → New Project
-2. Drag and drop the `vaaniai` folder
-3. Click Deploy — done!
+---
 
-### Option C — GitHub + Vercel (recommended for ongoing use)
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/YOUR_USERNAME/vaaniai.git
-git push -u origin main
-# Then import the repo at vercel.com/new
-```
+# 4. Implementation
+
+## Frontend Technologies
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+## Artificial Intelligence
+
+- OpenRouter API
+- GPT-4o Mini
+- Natural Language Processing (NLP)
+
+## Voice Technologies
+
+- Web Speech API
+- Speech Recognition API
+- Speech Synthesis API
+
+## Deployment Platform
+
+- Vercel
+
+## Development Tools
+
+- Visual Studio Code
+- Git
+- GitHub
 
 ---
 
-## 🔑 API Key Setup
+# 5. Key Features
 
-1. Get a free key at **https://openrouter.ai** (sign up → Keys → Create)
-2. In the running app: go to **Settings** → paste your key → Save
-   - OR edit `src/services/openrouter.js` and add your key to `FALLBACK_KEYS`
-
-> Without a key the app runs in **simulation mode** — good for testing UI.
-
----
-
-## 🎙️ Using the Voice Agent
-
-1. Open the app in **Google Chrome or Microsoft Edge** (required for Web Speech API)
-2. Go to **Dashboard** → click **Start Agent**
-3. Allow microphone access when prompted
-4. Speak — Priya will greet you and start a conversation
-5. Works in English, Hindi, and Marathi — language is auto-detected
+- AI-Powered Hospital Receptionist
+- Multilingual Voice Support
+- English, Hindi, and Marathi Communication
+- Automatic Language Detection
+- Appointment Booking Assistance
+- Hospital Information Guidance
+- Real-Time Speech Recognition
+- Intelligent Response Generation
+- Text-to-Speech Output
+- Browser-Based Accessibility
+- Responsive User Interface
+- Call Logging and Analytics
 
 ---
 
-## 🏗️ Project Structure
+# 6. Project Screenshots
 
-```
-vaaniai/
-├── index.html              ← SPA entry point (all CSS + routing)
-├── vercel.json             ← Vercel deployment config
-├── src/
-│   ├── components/
-│   │   ├── voiceOrb.js     ← Voice agent UI + conversation loop
-│   │   ├── sidebar.js      ← Navigation
-│   │   ├── topbar.js       ← Header
-│   │   ├── charts.js       ← SVG charts
-│   │   └── modals.js       ← Popup dialogs
-│   ├── pages/
-│   │   ├── dashboard.js    ← Main dashboard
-│   │   ├── calls.js        ← Call logs
-│   │   ├── appointments.js ← Appointment manager
-│   │   ├── crm.js          ← Contacts / CRM
-│   │   ├── analytics.js    ← Analytics charts
-│   │   ├── transcripts.js  ← Call transcripts
-│   │   ├── notifications.js← Alerts
-│   │   ├── voiceConfig.js  ← Agent configuration
-│   │   └── settings.js     ← App settings
-│   ├── services/
-│   │   ├── openrouter.js   ← LLM API (OpenRouter)
-│   │   ├── speech.js       ← STT + TTS (Web Speech API)
-│   │   ├── intentDetector.js
-│   │   └── languageDetector.js
-│   ├── store/appState.js   ← Global state
-│   └── utils/
-│       ├── constants.js    ← Mock data + config
-│       └── formatters.js   ← Date/time helpers
-└── public/favicon.svg
-```
+## Home Page
+
+![Home Page](screenshots/home.png)
+
+## Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+## Voice Receptionist
+
+![Voice Receptionist](screenshots/voice-agent.png)
+
+## Appointment Booking
+
+![Appointment Booking](screenshots/appointment.png)
+
+## Analytics Dashboard
+
+![Analytics Dashboard](screenshots/analytics.png)
 
 ---
 
-## 🐛 Fixed Issues (v1.1)
+# 7. Conclusion
 
-| Issue | Fix |
-|-------|-----|
-| Start Agent did nothing | `voiceOrb.js` rewritten — proper TTS→STT→LLM loop |
-| TTS cut off mid-sentence | Long utterances split into chunks, Chrome bug workaround |
-| No Marathi support | Language detector + STT locale `mr-IN` added |
-| Language not switching | Detected language now updates STT locale dynamically |
-| API key not persisted | Saved to `localStorage`, restored on page load |
-| Voices list empty on Chrome | Proper async `voiceschanged` wait + fallback timeout |
-| Simulated responses used Aria | Updated to Priya + City General Hospital |
-| No toast helper globally | `window.__showToast` added to index.html |
-| `window.__formatters` missing | Exposed from formatters.js for modal use |
+VaaniAI demonstrates how Artificial Intelligence can improve healthcare communication through voice-based interactions. By integrating speech recognition, language detection, natural language processing, and speech synthesis technologies, the system creates a complete virtual receptionist experience.
+
+The application successfully automates routine hospital interactions, reduces administrative workload, and improves accessibility for patients. Its browser-based architecture ensures easy deployment and usage without requiring specialized hardware or software.
+
+The project highlights the potential of conversational AI systems in transforming patient communication and healthcare service delivery.
 
 ---
 
-## 💡 Tips
+# 8. Future Aspects
 
-- **Microphone not working?** Check browser permissions (address bar → lock icon)
-- **TTS not speaking?** Chrome requires a user gesture before audio — clicking Start Agent counts
-- **Marathi voice unavailable?** Chrome on Android has `mr-IN` voices; desktop Chrome may fall back to Hindi
-- **Rate limited?** Add 2–3 OpenRouter keys in `FALLBACK_KEYS` in `openrouter.js`
-=======
-# AI Voice Receptionist  
+The project can be enhanced further with:
 
-## Author  
-Shraddha Bankar  
-
-## Affiliation  
-Computer Science Engineering (Data Science)  
-
-## Date  
-March 2026  
+- WhatsApp Integration
+- Twilio Voice Calling Support
+- Electronic Health Record (EHR) Integration
+- AI-Based Doctor Recommendation
+- Emergency Call Escalation
+- Voice Biometrics Authentication
+- Additional Indian Language Support
+- Mobile Application Development
+- Offline Speech Recognition
+- Telemedicine Integration
+- Appointment Reminder Notifications
 
 ---
 
-## Abstract  
-This project is about building an AI Voice Receptionist that can handle tasks like answering queries, booking appointments, and sending reports.  
+# References
 
-It works using voice and chat, and also supports multiple languages. Reports can be shared through WhatsApp and email, and all data is stored in a database.  
+### Live Application
 
-The system helps reduce manual work and provides fast and 24/7 service.  
+- https://ai-voice-receptionist-ebon.vercel.app/
 
----
+### AI & NLP Resources
 
-## Introduction  
-In places like hospitals, receptionists manage calls, appointments, and records. This can take a lot of time and effort.  
+- https://openrouter.ai/docs
+- https://openai.com/research
+- https://arxiv.org
 
-This project creates an AI-based receptionist that can do these tasks automatically using voice and chat. The goal is to save time, reduce workload, and improve user experience.  
+### Speech Technologies
 
----
+- https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+- https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
+- https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 
-## Literature Review  
-AI assistants like Alexa and Google Assistant show how voice technology can help users.  
+### Web Development
 
-Most systems support only voice or chat, but this project combines both along with features like multi-language support and report sharing.  
+- https://developer.mozilla.org/en-US/docs/Web/HTML
+- https://developer.mozilla.org/en-US/docs/Web/CSS
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
----
+### Deployment & Version Control
 
-## Methodology  
-- Take input through voice or chat  
-- Convert voice to text  
-- Understand user request using NLP  
-- Perform actions (book appointment, send report, etc.)  
-- Convert response back to voice  
-- Store all data in database  
+- https://vercel.com/docs
+- https://docs.github.com
 
----
+### Healthcare AI Research
 
-## Implementation  
-
-**Language:** Python  
-
-**Technologies:**  
-- SpeechRecognition  
-- gTTS / pyttsx3  
-- NLTK / spaCy  
-- Flask / Django  
-- Twilio API  
-- SMTP  
-
-**Tools:**  
-- VS Code  
-- Jupyter Notebook  
-- Google Colab  
-- GitHub  
-- MySQL / MongoDB  
+- https://www.ncbi.nlm.nih.gov
+- https://scholar.google.com
 
 ---
 
-## Results  
-The system can book appointments, answer questions, and send reports successfully.  
+## 👩‍💻 Author
 
-It supports voice and chat, making it easy to use. It also reduces manual work and improves response time.  
+**Shraddha Bankar**  
+B.Tech – Computer Science Engineering (Data Science)
 
----
+🌐 Live Project: https://ai-voice-receptionist-ebon.vercel.app/
 
-## Limitations  
-- Depends on voice clarity  
-- Cannot handle very complex queries  
-- Needs internet connection  
-- Accent may affect accuracy  
-
----
-
-## Future Scope  
-- Improve AI understanding  
-- Add more languages  
-- Build mobile app  
-- Better security and privacy  
-
----
-
-## Conclusion  
-This project shows how AI can automate receptionist tasks using voice and chat.  
-
-It is simple, useful, and can be used in hospitals and service industries.  
-
----
-
-## References  
-1. Speech Recognition Systems (2021)  
-2. NLP Applications (2020)  
-3. https://cloud.google.com/speech-to-text  
-4. https://www.twilio.com/  
->>>>>>> 9a2a165d33eaf3b8f5c7cf9a84c3e32bed244c49
+⭐ If you found this project useful, consider giving it a Star on GitHub.
