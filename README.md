@@ -52,11 +52,13 @@ The user speaks through a microphone, and the system converts speech into text u
 # Implementation
 
 ### Programming Languages
+
 - HTML
 - CSS
 - JavaScript
 
 ### Technologies Used
+
 - OpenRouter API
 - GPT-4o Mini
 - Web Speech API
@@ -64,6 +66,7 @@ The user speaks through a microphone, and the system converts speech into text u
 - Speech Synthesis API
 
 ### Tools
+
 - VS Code
 - GitHub
 - Vercel
@@ -73,14 +76,6 @@ The user speaks through a microphone, and the system converts speech into text u
 # Results and Discussion
 
 The system successfully performs multilingual voice interactions, understands patient queries, and generates accurate responses. It provides a seamless user experience through real-time voice communication.
-
-## Screenshots
-
-![Home](screenshots/home.png)
-
-![Dashboard](screenshots/dashboard.png)
-
-![Voice Assistant](screenshots/voice-agent.png)
 
 ---
 
