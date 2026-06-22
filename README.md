@@ -1,87 +1,102 @@
-<div align="center">
+# 🎙️ AI Voice Receptionist
 
-# 🎙️ VaaniAI: AI-Powered Hospital Voice Receptionist
+## 🌐 Live Deployment
 
-### Conversational AI for Multilingual Healthcare Access
-
-🌐 **Live Deployment**
-
-🚀 **https://ai-voice-receptionist-ebon.vercel.app/**
+🚀 **Project Demo:**  
+https://ai-voice-receptionist-ebon.vercel.app/
 
 ---
 
-## 👩‍💻 Author
+# Project Title
 
-**Shraddha Bankar**  
-B.Tech – Computer Science Engineering (Data Science)
+**AI Voice Receptionist**
 
-RTMNU, Maharashtra, India
+---
 
-📅 **Date of Publication:** June 2026
+# Author(s)
 
-</div>
+**Shraddha Bankar**
+
+---
+
+# Affiliation
+
+Bachelor of Technology (B.Tech)  
+Computer Science Engineering (Data Science)  
+Nagpur, Maharashtra, India
+
+---
+
+# Date
+
+**June 2026**
 
 ---
 
 # Abstract
 
-Healthcare communication is one of the most important aspects of patient care. However, many hospitals face challenges such as long waiting queues, overloaded reception desks, and communication barriers between patients and staff. These challenges often affect patient experience and increase administrative workload.
+Healthcare institutions receive a large number of patient inquiries every day regarding appointments, doctor availability, consultation fees, hospital timings, and emergency services. Managing these inquiries manually can lead to long waiting times, increased workload for reception staff, and communication barriers, especially in multilingual environments.
 
-VaaniAI is an AI-powered hospital voice receptionist designed to provide natural and intelligent communication between patients and healthcare providers. The system allows users to interact through voice in English, Hindi, and Marathi. It automatically recognizes speech, detects the user's language, understands the request, and responds with meaningful information using Artificial Intelligence.
+AI Voice Receptionist is an intelligent virtual assistant designed to automate hospital reception services through voice-based interactions. The system allows patients to communicate naturally using voice commands in English, Hindi, and Marathi. By leveraging Speech Recognition, Natural Language Processing (NLP), Large Language Models (LLMs), and Text-to-Speech technologies, the system can understand user queries, identify their intent, and generate relevant responses in real time.
 
-The project combines Speech Recognition, Natural Language Processing (NLP), Large Language Models (LLMs), and Text-to-Speech technologies to create a seamless voice-based experience. The primary objective is to improve accessibility, reduce receptionist workload, and provide 24/7 assistance for hospital-related queries and appointment bookings.
+The solution aims to improve patient accessibility, reduce administrative workload, and provide continuous assistance without human intervention. The implementation demonstrates how Artificial Intelligence can be effectively applied in healthcare communication systems to enhance efficiency and improve the overall patient experience.
 
-**Keywords:** Artificial Intelligence, Voice Assistant, Healthcare Automation, Natural Language Processing, Speech Recognition, OpenRouter API, Hospital Management.
-
----
-
-# 1. Introduction
-
-Hospitals receive thousands of patient inquiries related to appointments, doctor availability, consultation fees, department information, and emergency services. Managing these requests manually can be time-consuming and stressful for reception staff.
-
-With the advancement of Artificial Intelligence and Natural Language Processing, conversational systems can now automate many routine communication tasks. VaaniAI acts as a virtual hospital receptionist capable of understanding spoken language and responding naturally to patients.
-
-The system supports English, Hindi, and Marathi, making healthcare information more accessible to users from different linguistic backgrounds. Since the application runs directly in a web browser, it requires no installation and can be accessed from anywhere.
+**Keywords:** Artificial Intelligence, Voice Assistant, Healthcare Automation, Speech Recognition, Natural Language Processing, Hospital Management, OpenRouter API.
 
 ---
 
-# 2. Literature Review
+# Introduction
 
-Recent research in healthcare technology highlights the growing importance of conversational AI systems and voice assistants.
+Hospitals serve as the primary point of healthcare access for millions of people. Reception desks play a critical role in managing patient inquiries, appointment scheduling, and information dissemination. However, traditional reception systems often face challenges such as overcrowding, long waiting times, limited availability, and communication barriers.
 
-Voice-based interfaces improve accessibility for elderly users and individuals who may struggle with traditional text-based systems. Studies have shown that healthcare chatbots can reduce administrative workload, improve response times, and enhance patient engagement.
+With recent advancements in Artificial Intelligence and Natural Language Processing, virtual assistants have emerged as effective solutions for automating routine communication tasks. AI Voice Receptionist is designed to function as a smart virtual receptionist capable of understanding spoken language and responding naturally to users.
 
-Speech Recognition and Text-to-Speech technologies have become increasingly accurate, enabling natural communication between humans and machines. Furthermore, Large Language Models (LLMs) have significantly improved contextual understanding and response generation capabilities.
-
-While several commercial healthcare assistants exist, many require expensive infrastructure and complex deployment. VaaniAI focuses on providing a lightweight, cost-effective, and multilingual solution suitable for hospitals and clinics.
+The project focuses on creating a multilingual conversational system that supports English, Hindi, and Marathi. By automating repetitive tasks and providing instant responses, the system improves operational efficiency while enhancing patient satisfaction and accessibility.
 
 ---
 
-# 3. Methodology
+# Literature Review
 
-The system follows a five-stage conversational workflow.
+Recent studies highlight the growing adoption of conversational AI systems in healthcare environments. Voice assistants and healthcare chatbots have demonstrated significant improvements in patient engagement, accessibility, and administrative efficiency.
 
-### Step 1: Voice Input
+Research on Speech Recognition technologies indicates that voice-based systems provide a more natural interaction experience, particularly for elderly users and individuals with limited technical knowledge. Natural Language Processing techniques have further enhanced the ability of machines to understand user intent and generate meaningful responses.
 
-The patient speaks into the microphone using a supported browser.
+Large Language Models (LLMs) such as GPT-based architectures have significantly improved conversational AI capabilities by providing contextual understanding and human-like interactions. Existing healthcare assistant solutions offer automated support but often require expensive infrastructure and complex deployment procedures.
 
-### Step 2: Speech Recognition
+AI Voice Receptionist addresses these limitations by providing a lightweight, browser-based, multilingual solution that can be easily deployed and accessed through modern web browsers.
 
-The Web Speech API converts spoken audio into text.
+---
 
-### Step 3: Language Detection
+# Methodology
 
-The system identifies whether the user is speaking English, Hindi, or Marathi.
+The proposed system follows a voice-driven conversational workflow. Initially, the user provides voice input through a microphone. The Speech Recognition module converts the spoken audio into text. The system then performs language detection to identify whether the user is communicating in English, Hindi, or Marathi. Once the language is identified, the text is processed using a Large Language Model through the OpenRouter API to determine the user's intent and generate an appropriate response. Finally, the generated response is converted into speech using Text-to-Speech technology and delivered back to the user. This workflow enables natural, intelligent, and multilingual communication between patients and the virtual receptionist.
 
-### Step 4: AI Processing
+---
 
-The recognized text is sent to OpenRouter's Large Language Model, where the user's intent is analyzed and an appropriate response is generated.
+# Implementation
 
-### Step 5: Voice Response
+## Programming Languages
 
-The generated response is converted into speech using Text-to-Speech technology and played back to the user.
+- HTML5
+- CSS3
+- JavaScript (ES6)
 
-### Workflow Diagram
+## Frameworks / Libraries
+
+- OpenRouter API
+- GPT-4o Mini
+- Web Speech API
+- Speech Recognition API
+- Speech Synthesis API
+
+## Tools Used
+
+- Visual Studio Code
+- Git
+- GitHub
+- Vercel
+
+## System Architecture
 
 ```text
 Patient Voice Input
@@ -108,150 +123,141 @@ Text-to-Speech
 Voice Output
 ```
 
----
+## Key Features
 
-# 4. Implementation
-
-## Frontend Technologies
-
-- HTML5
-- CSS3
-- JavaScript (ES6)
-
-## Artificial Intelligence
-
-- OpenRouter API
-- GPT-4o Mini
-- Natural Language Processing (NLP)
-
-## Voice Technologies
-
-- Web Speech API
-- Speech Recognition API
-- Speech Synthesis API
-
-## Deployment Platform
-
-- Vercel
-
-## Development Tools
-
-- Visual Studio Code
-- Git
-- GitHub
-
----
-
-# 5. Key Features
-
-- AI-Powered Hospital Receptionist
+- AI-Powered Virtual Receptionist
 - Multilingual Voice Support
 - English, Hindi, and Marathi Communication
 - Automatic Language Detection
 - Appointment Booking Assistance
-- Hospital Information Guidance
+- Hospital Information Support
 - Real-Time Speech Recognition
-- Intelligent Response Generation
+- AI-Based Response Generation
 - Text-to-Speech Output
 - Browser-Based Accessibility
 - Responsive User Interface
-- Call Logging and Analytics
+- Conversation Logging
+- Analytics Dashboard
 
 ---
 
-# 6. Project Screenshots
+# Results and Discussion
 
-## Home Page
+The developed system successfully performs multilingual voice-based interactions and demonstrates the practical application of Artificial Intelligence in healthcare communication.
+
+Testing results indicate that the application can accurately recognize speech, detect languages, understand user intent, and generate contextually relevant responses. The system effectively handles appointment booking requests, hospital information queries, and general patient assistance tasks.
+
+The browser-based implementation ensures easy accessibility without requiring additional software installation. The use of conversational AI significantly reduces administrative workload while improving patient engagement and service availability.
+
+## Project Screenshots
+
+### Home Page
 
 ![Home Page](screenshots/home.png)
 
-## Dashboard
+### Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
 
-## Voice Receptionist
+### Voice Assistant Interface
 
-![Voice Receptionist](screenshots/voice-agent.png)
+![Voice Assistant](screenshots/voice-agent.png)
 
-## Appointment Booking
+### Appointment Booking
 
 ![Appointment Booking](screenshots/appointment.png)
 
-## Analytics Dashboard
+### Analytics Dashboard
 
 ![Analytics Dashboard](screenshots/analytics.png)
 
 ---
 
-# 7. Conclusion
+# Limitations
 
-VaaniAI demonstrates how Artificial Intelligence can improve healthcare communication through voice-based interactions. By integrating speech recognition, language detection, natural language processing, and speech synthesis technologies, the system creates a complete virtual receptionist experience.
-
-The application successfully automates routine hospital interactions, reduces administrative workload, and improves accessibility for patients. Its browser-based architecture ensures easy deployment and usage without requiring specialized hardware or software.
-
-The project highlights the potential of conversational AI systems in transforming patient communication and healthcare service delivery.
+- Requires internet connectivity for AI processing.
+- Background noise can affect speech recognition accuracy.
+- Performance depends on browser support for speech technologies.
+- Currently supports only English, Hindi, and Marathi.
+- Does not yet integrate with live hospital databases.
+- Appointment data is not connected to real hospital management systems.
+- Accuracy may vary depending on microphone quality and network conditions.
 
 ---
 
-# 8. Future Aspects
+# Future Scope
 
-The project can be enhanced further with:
+The project can be enhanced further through several improvements:
 
 - WhatsApp Integration
 - Twilio Voice Calling Support
 - Electronic Health Record (EHR) Integration
-- AI-Based Doctor Recommendation
+- AI-Based Doctor Recommendation System
 - Emergency Call Escalation
 - Voice Biometrics Authentication
-- Additional Indian Language Support
 - Mobile Application Development
+- Additional Indian Language Support
 - Offline Speech Recognition
 - Telemedicine Integration
-- Appointment Reminder Notifications
+- Automated Appointment Reminders
+- Real-Time Hospital Database Connectivity
+
+---
+
+# Conclusion
+
+AI Voice Receptionist demonstrates the potential of Artificial Intelligence in transforming healthcare communication systems. By integrating Speech Recognition, Natural Language Processing, Large Language Models, and Text-to-Speech technologies, the system creates an intelligent virtual receptionist capable of handling patient inquiries through natural voice conversations.
+
+The project successfully improves accessibility, reduces receptionist workload, and provides multilingual support for a diverse user base. The results show that AI-powered conversational systems can significantly enhance patient experiences while improving operational efficiency within healthcare institutions.
+
+As conversational AI technologies continue to evolve, systems such as AI Voice Receptionist have the potential to become an essential component of modern healthcare infrastructure.
 
 ---
 
 # References
 
-### Live Application
+[1] Brown, T. B., et al., "Language Models are Few-Shot Learners," NeurIPS, 2020.
 
-- https://ai-voice-receptionist-ebon.vercel.app/
+[2] Fadhil, A., Gabrielli, S., "Addressing Challenges in Promoting Healthy Lifestyles: The AI Chatbot Approach," Healthcare Conference, 2017.
 
-### AI & NLP Resources
+[3] Kunchukuttan, A., et al., "IndicNLP Library for Indian Language Processing," 2020.
 
-- https://openrouter.ai/docs
-- https://openai.com/research
-- https://arxiv.org
+[4] OpenRouter Documentation  
+https://openrouter.ai/docs
 
-### Speech Technologies
+[5] Web Speech API Documentation  
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
 
-- https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
-- https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
-- https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+[6] Speech Recognition API Documentation  
+https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 
-### Web Development
+[7] Speech Synthesis API Documentation  
+https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 
-- https://developer.mozilla.org/en-US/docs/Web/HTML
-- https://developer.mozilla.org/en-US/docs/Web/CSS
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[8] OpenAI Research  
+https://openai.com/research
 
-### Deployment & Version Control
+[9] Vercel Documentation  
+https://vercel.com/docs
 
-- https://vercel.com/docs
-- https://docs.github.com
+[10] GitHub Documentation  
+https://docs.github.com
 
-### Healthcare AI Research
+[11] MDN Web Docs  
+https://developer.mozilla.org
 
-- https://www.ncbi.nlm.nih.gov
-- https://scholar.google.com
+[12] arXiv Research Papers  
+https://arxiv.org
+
+[13] Google Scholar  
+https://scholar.google.com
+
+[14] National Center for Biotechnology Information (NCBI)  
+https://www.ncbi.nlm.nih.gov
+
+[15] Live Project Deployment  
+https://ai-voice-receptionist-ebon.vercel.app/
 
 ---
 
-## 👩‍💻 Author
-
-**Shraddha Bankar**  
-B.Tech – Computer Science Engineering (Data Science)
-
-🌐 Live Project: https://ai-voice-receptionist-ebon.vercel.app/
-
-⭐ If you found this project useful, consider giving it a Star on GitHub.
+⭐ If you found this project useful, please consider giving it a Star on GitHub.
