@@ -5,7 +5,249 @@ PROJECT NOTES (COMPLETE GUIDE)
 
 PROJECT LINK:
 https://ai-voice-receptionist-ebon.vercel.app/
+================================================================
+  VAANIAI — AI VOICE RECEPTIONIST
+  Developer Notes: Setup, Run, Commands & Architecture
+  Repository: https://github.com/Shraddha-Bankar/AI_Voice_Receptionist
+================================================================
 
+----------------------------------------------------------------
+  1. PROJECT OVERVIEW
+----------------------------------------------------------------
+
+VaaniAI is a browser-based AI Voice Receptionist built as a Single
+Page Application (SPA) using vanilla JavaScript. It uses:
+
+  - OpenRouter API   → LLM intelligence (intent understanding, responses)
+  - Web Speech API   → Browser-native STT (microphone input) + TTS (voice output)
+  - Vercel           → Zero-config deployment with SPA routing support
+
+No build step or bundler is required — pure HTML/CSS/JS.
+
+----------------------------------------------------------------
+  2. PREREQUISITES
+----------------------------------------------------------------
+
+  - A modern browser (Chrome recommended for Web Speech API support)
+  - Node.js (optional — only needed if you use a local dev server)
+  - An OpenRouter API key → https://openrouter.ai/keys
+  - Vercel account (for deployment) → https://vercel.com
+
+  Browser Support for Web Speech API:
+    ✅ Google Chrome (desktop + Android)
+    ✅ Microsoft Edge
+    ⚠️  Firefox (partial support — may need flags)
+    ❌ Safari (no SpeechRecognition support)
+
+----------------------------------------------------------------
+  3. LOCAL DEVELOPMENT SETUP
+----------------------------------------------------------------
+
+  STEP 1 — Clone the repository
+  ─────────────────────────────
+    git clone https://github.com/Shraddha-Bankar/AI_Voice_Receptionist.git
+    cd AI_Voice_Receptionist
+
+  STEP 2 — Configure API Key
+  ──────────────────────────
+    Open src/utils/constants.js and set your OpenRouter API key:
+
+      const OPENROUTER_API_KEY = "sk-or-xxxxxxxxxxxxxxxx";
+
+    (Or wherever the key is stored in the constants file.)
+
+  STEP 3 — Run locally (Option A — Python simple server)
+  ───────────────────────────────────────────────────────
+    python3 -m http.server 8080
+
+    Then visit: http://localhost:8080
+
+  STEP 3 — Run locally (Option B — Node.js live-server)
+  ───────────────────────────────────────────────────────
+    npm install -g live-server
+    live-server --port=8080
+
+    Then visit: http://localhost:8080
+
+  STEP 3 — Run locally (Option C — VS Code Live Server extension)
+  ────────────────────────────────────────────────────────────────
+    Install "Live Server" extension in VS Code.
+    Right-click index.html → "Open with Live Server"
+
+  ⚠️  NOTE: You MUST serve the project over HTTP (not file://)
+      because the Web Speech API and fetch() require a server
+      context. Opening index.html directly in the browser will
+      NOT work.
+
+----------------------------------------------------------------
+  4. VERCEL DEPLOYMENT
+----------------------------------------------------------------
+
+  OPTION A — Deploy via Vercel CLI
+  ──────────────────────────────────
+    npm install -g vercel
+    vercel login
+    vercel
+
+    Follow prompts. Project root is the repo root (where index.html is).
+
+  OPTION B — Deploy via Vercel Dashboard
+  ────────────────────────────────────────
+    1. Go to https://vercel.com/new
+    2. Import the GitHub repo: Shraddha-Bankar/AI_Voice_Receptionist
+    3. Framework Preset: "Other" (no build step)
+    4. Root Directory: ./  (leave as default)
+    5. Click Deploy
+
+  vercel.json handles SPA routing so all paths redirect to index.html:
+
+    {
+      "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    }
+
+  OPTION C — Redeploy after changes
+  ────────────────────────────────────
+    vercel --prod
+
+----------------------------------------------------------------
+  5. PROJECT SCRIPTS / COMMANDS REFERENCE
+----------------------------------------------------------------
+
+  Local dev (Python):
+    python3 -m http.server 8080
+
+  Local dev (Node):
+    npx live-server --port=8080
+
+  Deploy to Vercel (preview):
+    vercel
+
+  Deploy to Vercel (production):
+    vercel --prod
+
+  List Vercel deployments:
+    vercel ls
+
+  Pull Vercel env vars locally:
+    vercel env pull
+
+----------------------------------------------------------------
+  6. ENVIRONMENT CONFIGURATION
+----------------------------------------------------------------
+
+  All configuration lives in:    src/utils/constants.js
+
+  Key constants to configure:
+  ─────────────────────────────
+    OPENROUTER_API_KEY     → Your OpenRouter key
+    DEFAULT_MODEL          → LLM model slug (e.g. "openai/gpt-4o-mini")
+    APP_NAME               → Display name shown in the UI
+    DEFAULT_LANGUAGE       → Default voice/UI language (e.g. "en-IN")
+    MOCK_DATA              → Demo data for calls, appointments, CRM
+
+  If deploying to Vercel with environment variable injection,
+  update the fetch call in services/openrouter.js to read from
+  a config endpoint or inject at build time.
+
+----------------------------------------------------------------
+  7. KEY MODULES — WHAT THEY DO
+----------------------------------------------------------------
+
+  voiceOrb.js
+    The core voice interaction component.
+    - Renders an animated orb that responds to audio levels
+    - Starts/stops microphone listening
+    - Sends transcribed text to openrouter.js for LLM processing
+    - Speaks back the response using TTS from speech.js
+    - Manages the full conversation turn loop
+
+  speech.js
+    Wraps the browser Web Speech API:
+    - SpeechRecognition  → mic → text (STT)
+    - SpeechSynthesis    → text → audio (TTS)
+    - Handles interim results, language setting, error recovery
+
+  openrouter.js
+    LLM API client:
+    - Sends prompt + conversation history to OpenRouter /chat/completions
+    - Parses streamed or full JSON response
+    - Returns assistant reply text
+
+  intentDetector.js
+    Post-STT intent classifier:
+    - Maps transcribed phrases to app intents
+      (e.g. "book an appointment" → INTENT_BOOK_APPOINTMENT)
+    - Triggers navigation or actions in the app
+
+  languageDetector.js
+    Auto-detects language from speech or browser locale.
+    Sets the STT recognition language accordingly.
+
+  appState.js
+    Central state store:
+    - Holds current page, active call, user preferences
+    - Components read from and write to this store
+    - No external library — plain JS object with listeners
+
+----------------------------------------------------------------
+  8. FOLDER RESPONSIBILITIES (QUICK REFERENCE)
+----------------------------------------------------------------
+
+  src/components/    → Reusable UI pieces (orb, nav, charts, modals)
+  src/pages/         → Full page views loaded by the SPA router
+  src/services/      → API calls and browser API wrappers
+  src/store/         → Global state management
+  src/utils/         → Pure helper functions, mock data, constants
+
+----------------------------------------------------------------
+  9. COMMON ISSUES & FIXES
+----------------------------------------------------------------
+
+  Issue: Microphone not working / STT silent
+  Fix:   Use Chrome. Ensure mic permissions are granted.
+         Site must be served over HTTP (not file://).
+
+  Issue: "SpeechRecognition is not defined"
+  Fix:   Browser doesn't support Web Speech API. Use Chrome/Edge.
+
+  Issue: OpenRouter returns 401 Unauthorized
+  Fix:   Check your API key in constants.js. Key must start with sk-or-
+
+  Issue: SPA routes return 404 on Vercel
+  Fix:   Ensure vercel.json has the rewrite rule pointing to /index.html
+
+  Issue: TTS voice speaks in wrong language
+  Fix:   Update DEFAULT_LANGUAGE in constants.js or check languageDetector.js
+
+----------------------------------------------------------------
+  10. TESTING
+----------------------------------------------------------------
+
+  No automated test suite is included (vanilla JS, no test framework).
+  Manual testing workflow:
+
+    1. Open app in Chrome at localhost:8080
+    2. Click voice orb to start listening
+    3. Speak a test phrase (e.g. "Book an appointment for tomorrow")
+    4. Verify STT transcription appears
+    5. Verify LLM response is spoken back
+    6. Navigate to each page and verify mock data renders
+    7. Test modal open/close, chart rendering, notification badges
+
+----------------------------------------------------------------
+  11. CONTRIBUTING
+----------------------------------------------------------------
+
+    git checkout -b feature/your-feature-name
+    # make changes
+    git add .
+    git commit -m "feat: describe your change"
+    git push origin feature/your-feature-name
+    # open a PR on GitHub
+
+================================================================
+  END OF NOTES
+================================================================
 ========================================
 1. PROJECT DESCRIPTION
 ========================================
